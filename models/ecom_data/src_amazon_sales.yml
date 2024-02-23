@@ -1,0 +1,54 @@
+version: 2
+
+sources:
+  - name: ecom_data
+    database: ecom-dbt-project
+    schema: ecom_data
+    tables:
+      - name: Amazon_sales_report
+        description: A table containing Amazon sales data.
+        identifier: Amazon_sales_report
+        column_types:
+          - name: index
+            description: index of sale number.
+          - name: order_id
+            description: id of the order, related to customer ids.
+          - name: category
+            description: Type of product.
+            type: string
+          - name: size
+            description: Size of product.
+            type: string
+          - name: date
+            description: Date of sale.
+            type: date
+          - name: status
+            description: Status of the sale. Example, shipped, cancelled, delivered.
+            type: string
+          - name: fulfilment
+            description: Method of fulfilment, mostly Amazon.
+            type: string
+          - name: style
+            description: The style indentifier part of the SKU.
+            type: string
+          - name: SKU
+            description: Stock Keeping Unit. An indentifier for each item in reference to the inventory.
+            type: string
+          - name: ASIN
+            description: Amazon Standard Identification Number.
+            type: string
+          - name: courier_status
+            description: status of courier shipment.
+            type: string
+          - name: quantity
+            description: quantity of the sale.
+            type: numeric
+          - name: amount
+            description: total amount of the sale.
+            type: numeric
+          - name: B2B
+            description: Boolean value of if sale was Buisness to Business.
+            type: boolean
+          - name: currency 
+            description: currency the sale was done in.
+            type: string

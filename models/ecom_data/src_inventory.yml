@@ -1,0 +1,30 @@
+version: 2
+
+sources:
+  - name: ecom_data
+    database: ecom-dbt-project
+    schema: ecom_data
+    tables:
+      - name: Inventory_report
+        description: A table containing ecom's inventory data
+        identifier: Inventory_report
+        column_types:
+          - name: index
+          - name: SKU_code
+            description: unique identifier for each product.
+            type: string
+          - name: design_no
+            description: unique identifier for each design.
+            type: string
+          - name: stock
+            description: number of items in stock.
+            type: numeric
+          - name: category
+            description: type of product.
+            type: string
+          - name: size
+            description: size of product.
+            type: string
+          - name: color
+            description: color of product.
+            type: string
