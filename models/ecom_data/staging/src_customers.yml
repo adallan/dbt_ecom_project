@@ -1,0 +1,23 @@
+version: 2
+
+sources:
+  - name: ecom_data
+    database: ecom-dbt-project
+    schema: ecom_data
+    tables:
+      - name: customers
+        description: A table containing Amazon sales data.
+        identifier: customers
+        column_types:
+          - name: customer_id
+            description: Unique indentifier for each customer.
+            type: numeric
+          - name: postal_code
+            description: Postal code of the order for each customer, this column cna be used to join into the amazon_sales table.
+            type: numeric
+          - name: num_orders
+            description: Number of orders the customer has made.
+            type: numeric
+          - name: total_spent
+            description: Total each customer has spent over all orders.
+            type: numeric
